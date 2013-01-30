@@ -34,14 +34,16 @@ public class Main {
 				
 		
 		Reader arek = new Reader("Arek", "1234", "Klonow 2");
+		Reader basia = new Reader("Barbara", "65789", "Kameliowa 2");
 		Book sniad = new Paperback("Sniadanie mistrzow","AAC555");
 		Book disc = new Audiobook("Discworld","PPD555",15);
 		sniad.setOwner(arek);
-		disc.setOwner(arek);
+		disc.setOwner(basia);
 		arek.getBooks().add(sniad);
-		arek.getBooks().add(disc);
+		basia.getBooks().add(disc);
 		
 		hib.save(arek);
+		hib.save(basia);
 		
 		List<Reader>results = hib.getAll();
 		

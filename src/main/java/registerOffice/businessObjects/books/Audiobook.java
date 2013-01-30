@@ -5,8 +5,7 @@ import javax.persistence.Entity;
 @Entity
 public class Audiobook extends Book{
 
-	
-	
+		
 	@Override
 	public String getBookDetails() {
 		// TODO Auto-generated method stub

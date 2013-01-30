@@ -1,4 +1,4 @@
-package registerOffice.management;
+/*package registerOffice.management;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -134,3 +134,4 @@ public class HsqlPersonManager
 	}
 
 }
+*/

@@ -53,21 +53,22 @@ public class Reader {
 	/*@Transient
 	Context context;*/
 	
-	public Reader(String name, String pesel, String address)
+	/*public Reader(String name, String pesel, String address) //wrzucał do SQL
 	{
 		this(name,pesel);
 		this.address=address;
-	}
-	public Reader(String name, String pesel)
+	}*/
+	public Reader(String name, String pesel, String address)
 	{
 		//context= Context.getInstance();
 		//context.raisenumberOfPeople();
-		this.pesel=pesel;
 		this.name=name;
+		this.address=address;
+		this.pesel=pesel;
 		this.books=new ArrayList<Book>();
 	}
 	
-	public Reader(String name) {
+	/*public Reader(String name) {
 		
 		this(name,"");
 	}
@@ -76,7 +77,7 @@ public class Reader {
 	{
 		
 		this("","");
-	}
+	}*/
 	
 	public String getName() {
 		return name;
