@@ -1,4 +1,4 @@
-package registerOffice;
+/*package registerOffice;
 
 public final class Context {
 
@@ -48,3 +48,4 @@ public final class Context {
 		return this.quantityOfBooks;
 	}
 }
+*/

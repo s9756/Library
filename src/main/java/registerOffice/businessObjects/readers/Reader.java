@@ -15,7 +15,7 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
-import registerOffice.Context;
+//import registerOffice.Context;
 import registerOffice.businessObjects.books.*;
 
 
@@ -50,8 +50,8 @@ public class Reader {
 	private String pesel;
 	private String address;
 	
-	@Transient
-	Context context;
+	/*@Transient
+	Context context;*/
 	
 	public Reader(String name, String pesel, String address)
 	{
@@ -60,8 +60,8 @@ public class Reader {
 	}
 	public Reader(String name, String pesel)
 	{
-		context= Context.getInstance();
-		context.raisenumberOfPeople();
+		//context= Context.getInstance();
+		//context.raisenumberOfPeople();
 		this.pesel=pesel;
 		this.name=name;
 		this.books=new ArrayList<Book>();
@@ -108,7 +108,7 @@ public class Reader {
 	
 	@Override
 	protected void finalize() throws Throwable {
-		context.reducePeople();
+		//context.reducePeople();
 		super.finalize();
 	}
 

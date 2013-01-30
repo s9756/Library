@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
-import registerOffice.Context;
+//import registerOffice.Context;
 import registerOffice.businessObjects.readers.Reader;
 
 @Entity
@@ -20,11 +20,11 @@ public abstract class Book implements BookInterface{
 	@ManyToOne
 	protected Reader owner;
 	
-	@Transient
-	Context context;
+	//@Transient
+	//Context context;
 	public Book(){
-		context =Context.getInstance();
-		context.raiseNumberOfBooks();
+	//	context =Context.getInstance();
+	//	context.raiseNumberOfBooks();
 	}
 	
 	public void printData()
@@ -35,7 +35,7 @@ public abstract class Book implements BookInterface{
 	
 	public abstract String getBookDetails();
 	
-	public abstract Book Clone();
+	//public abstract Book Clone();
 	
 	public void setOwner(Reader owner)
 	{
@@ -52,7 +52,7 @@ public abstract class Book implements BookInterface{
 
 	@Override
 	protected void finalize() throws Throwable {
-		context.reduceBooks();
+	//	context.reduceBooks();
 		super.finalize();
 	}
 	

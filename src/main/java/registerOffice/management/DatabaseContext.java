@@ -1,4 +1,4 @@
-package registerOffice.management;
+/*package registerOffice.management;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,3 +20,4 @@ public class DatabaseContext {
 	
 	
 }
+*/

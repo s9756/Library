@@ -33,15 +33,15 @@ public class Main {
 				new HibernatePersonManager(session);
 				
 		
-		Reader adam = new Reader("Adam", "1234", "Brzegi 55");
-		Book alfa = new Paperback("Alfa Romeo","gda1234");
-		Book peugeot = new Paperback("Pegeot","gda5678");
-		alfa.setOwner(adam);
-		peugeot.setOwner(adam);
-		adam.getBooks().add(alfa);
-		adam.getBooks().add(peugeot);
+		Reader arek = new Reader("Arek", "1234", "Klonow 2");
+		Book sniad = new Paperback("Sniadanie mistrzow","AAC555");
+		Book disc = new Audiobook("Discworld","PPD555",15);
+		sniad.setOwner(arek);
+		disc.setOwner(arek);
+		arek.getBooks().add(sniad);
+		arek.getBooks().add(disc);
 		
-		hib.save(adam);
+		hib.save(arek);
 		
 		List<Reader>results = hib.getAll();
 		

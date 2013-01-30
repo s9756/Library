@@ -6,44 +6,39 @@ import javax.persistence.Entity;
 @Entity
 public class Paperback extends Book{
 
-	//pole statyczne
 	
-	//pola prywatne
+
+	private String title;
+	private String signature;
 	
-	
-	
-	private String mark;
-	private String registerNumber;
-	
-	//pola publiczne
-	
+
 	//konstruktory
-	public Paperback(String mark, String registerNumber)
+	public Paperback(String title, String signature)
 	{
-		this.mark=mark;
-		this.registerNumber=registerNumber;
+		this.title=title;
+		this.signature=signature;
 	}
 	
-	public Paperback()
+	/*public Paperback()
 	{
 		this("","");
-	}
+	}*/
 	
 	//wlasciwosci
-	public String getMark() {
-		return mark;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setMark(String mark) {
-		this.mark = mark;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getRegisterNumber() {
-		return registerNumber;
+	public String getSignature() {
+		return signature;
 	}
 
-	public void setRegisterNumber(String registerNumber) {
-		this.registerNumber = registerNumber;
+	public void setSignature(String signature) {
+		this.signature = signature;
 	}
 	
 	//metody
@@ -52,15 +47,15 @@ public class Paperback extends Book{
 	@Override
 	public String getBookDetails() {
 		// TODO Auto-generated method stub
-		return mark+" "+registerNumber;
+		return title+" "+signature;
 	}
 
-	@Override
+	/*@Override
 	public Book Clone() {
 		
 		Paperback returnValue =new Paperback();
-		returnValue.setRegisterNumber(this.registerNumber);
+		returnValue.setSignature(this.signature);
 		
 		return returnValue;
-	}
+	}*/
 }
