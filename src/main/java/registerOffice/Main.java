@@ -9,10 +9,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import registerOffice.businessObjects.cars.Car;
-import registerOffice.businessObjects.cars.PersonCar;
-import registerOffice.businessObjects.cars.TruckCar;
-import registerOffice.businessObjects.persons.*;
+import registerOffice.businessObjects.books.Audiobook;
+import registerOffice.businessObjects.books.Book;
+import registerOffice.businessObjects.books.Paperback;
+import registerOffice.businessObjects.readers.*;
 import registerOffice.management.*;
 import registerOffice.management.conditions.Condition;
 import registerOffice.management.conditions.GetByAddressCondition;
@@ -29,23 +29,23 @@ public class Main {
 		
 		Session session = factory.openSession();
 		
-		ManagerInterface<Person> hib= 
+		ManagerInterface<Reader> hib= 
 				new HibernatePersonManager(session);
 				
 		
-		Person adam = new Person("Adam", "1234", "Brzegi 55");
-		Car alfa = new PersonCar("Alfa Romeo","gda1234");
-		Car peugeot = new PersonCar("Pegeot","gda5678");
+		Reader adam = new Reader("Adam", "1234", "Brzegi 55");
+		Book alfa = new Paperback("Alfa Romeo","gda1234");
+		Book peugeot = new Paperback("Pegeot","gda5678");
 		alfa.setOwner(adam);
 		peugeot.setOwner(adam);
-		adam.getCars().add(alfa);
-		adam.getCars().add(peugeot);
+		adam.getBooks().add(alfa);
+		adam.getBooks().add(peugeot);
 		
 		hib.save(adam);
 		
-		List<Person>results = hib.getAll();
+		List<Reader>results = hib.getAll();
 		
-		for(Person p :results)
+		for(Reader p :results)
 		{
 			System.out.println(p.getName());
 		}

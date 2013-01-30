@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import registerOffice.businessObjects.persons.Person;
+import registerOffice.businessObjects.readers.Reader;
 
 public class HibernatePersonManagerTests {
 
@@ -44,9 +44,9 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testGet() {
-		Person result = mgr.get(1);
-		Person result2 = mgr.get(1);
-		Person result3 = mgr.get(100);
+		Reader result = mgr.get(1);
+		Reader result2 = mgr.get(1);
+		Reader result3 = mgr.get(100);
 		assertNotNull("brak wyników",result);
 		assertEquals("zle ustawienie Id",result.getId(),1);
 		
@@ -62,7 +62,7 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testGetAll() {
-		List<Person> results = mgr.getAll();
+		List<Reader> results = mgr.getAll();
 		
 		assertNotNull("Lista jest nullem", results);
 		assertTrue("ilosc elementów w liscie sie nie zgadza",
@@ -71,9 +71,9 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testSave() {
-		Person p = new Person("Tomasz","2314","Morska");
+		Reader p = new Reader("Tomasz","2314","Morska");
 		mgr.save(p);
-		Person result = mgr.get(7);
+		Reader result = mgr.get(7);
 		assertNotNull("nie zapisano do bazy",result);
 		assertEquals("zle ustawienie adresu",result.getAddress(),"Morska");
 		assertEquals("zle ustawienie imion",result.getName(), "Tomasz");
@@ -83,10 +83,10 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testDelete() {
-		Person p = mgr.get(1);
+		Reader p = mgr.get(1);
 		boolean deleted = mgr.delete(p);
 		
-		Person result = mgr.get(1);
+		Reader result = mgr.get(1);
 		assertTrue("nie skasowano",deleted);
 		assertTrue("ilosc danych w bazie nie zmalala",
 				mgr.getAll().size()==5);

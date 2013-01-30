@@ -1,4 +1,4 @@
-package registerOffice.businessObjects.persons;
+package registerOffice.businessObjects.readers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,36 +16,36 @@ import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
 import registerOffice.Context;
-import registerOffice.businessObjects.cars.*;
+import registerOffice.businessObjects.books.*;
 
 
 @Entity
-@Table(name = "Osoby")
+@Table(name = "Readers")
 @NamedQueries({
 	@NamedQuery(
-			name="Person.all",
-			query="from Person p"
+			name="Reader.all",
+			query="from Reader p"
 			),
 	@NamedQuery(
-			name="Person.id",
-			query="from Person p where id= :id"
+			name="Reader.id",
+			query="from Reader p where id= :id"
 			),
 	@NamedQuery(
-			name="Person.delete",
-			query="Delete from Person p where id=:id"
+			name="Reader.delete",
+			query="Delete from Reader p where id=:id"
 			)
 })
-public class Person {
+public class Reader {
 
 	@Id
 	@GeneratedValue
 	private int id;
 	
-	@Column(name="Imie")
+	@Column(name="Name")
 	private String name;
 	
 	@OneToMany(mappedBy="owner", cascade = CascadeType.PERSIST)
-	private List<Car> cars;
+	private List<Book> books;
 	
 	private String pesel;
 	private String address;
@@ -53,26 +53,26 @@ public class Person {
 	@Transient
 	Context context;
 	
-	public Person(String name, String pesel, String address)
+	public Reader(String name, String pesel, String address)
 	{
 		this(name,pesel);
 		this.address=address;
 	}
-	public Person(String name, String pesel)
+	public Reader(String name, String pesel)
 	{
 		context= Context.getInstance();
 		context.raisenumberOfPeople();
 		this.pesel=pesel;
 		this.name=name;
-		this.cars=new ArrayList<Car>();
+		this.books=new ArrayList<Book>();
 	}
 	
-	public Person(String name) {
+	public Reader(String name) {
 		
 		this(name,"");
 	}
 	
-	public Person()
+	public Reader()
 	{
 		
 		this("","");
@@ -84,11 +84,11 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Car> getCars() {
-		return cars;
+	public List<Book> getBooks() {
+		return books;
 	}
-	public void setCars(List<Car> cars) {
-		this.cars = cars;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
 	public String getPesel() {

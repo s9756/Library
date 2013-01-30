@@ -1,10 +1,10 @@
-package registerOffice.businessObjects.cars;
+package registerOffice.businessObjects.books;
 
 import javax.persistence.Entity;
 
 
 @Entity
-public class PersonCar extends Car{
+public class Paperback extends Book{
 
 	//pole statyczne
 	
@@ -18,13 +18,13 @@ public class PersonCar extends Car{
 	//pola publiczne
 	
 	//konstruktory
-	public PersonCar(String mark, String registerNumber)
+	public Paperback(String mark, String registerNumber)
 	{
 		this.mark=mark;
 		this.registerNumber=registerNumber;
 	}
 	
-	public PersonCar()
+	public Paperback()
 	{
 		this("","");
 	}
@@ -50,15 +50,15 @@ public class PersonCar extends Car{
 	
 
 	@Override
-	public String getCarDetails() {
+	public String getBookDetails() {
 		// TODO Auto-generated method stub
 		return mark+" "+registerNumber;
 	}
 
 	@Override
-	public Car Clone() {
+	public Book Clone() {
 		
-		PersonCar returnValue =new PersonCar();
+		Paperback returnValue =new Paperback();
 		returnValue.setRegisterNumber(this.registerNumber);
 		
 		return returnValue;

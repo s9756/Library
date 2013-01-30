@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import registerOffice.businessObjects.persons.Person;
+import registerOffice.businessObjects.readers.Reader;
 
 public class HibernatePersonManager 
-	implements ManagerInterface<Person>{
+	implements ManagerInterface<Reader>{
 
 	Session session;
 	
@@ -17,15 +17,15 @@ public class HibernatePersonManager
 	}
 	
 	@Override
-	public Person get(int id) {
+	public Reader get(int id) {
 		
-		List<Person> result = 
-				session.getNamedQuery("Person.id")
+		List<Reader> result = 
+				session.getNamedQuery("Reader.id")
 					.setInteger("id", id).list();
 		if(result.size()==0)
 			return null;
 		
-		Person returnValue = new Person(
+		Reader returnValue = new Reader(
 				result.get(0).getName(), 
 				result.get(0).getPesel(),
 				result.get(0).getAddress());
@@ -34,15 +34,15 @@ public class HibernatePersonManager
 	}
 
 	@Override
-	public List<Person> getAll() {
-		List<Person> result =
-				session.getNamedQuery("Person.all")
+	public List<Reader> getAll() {
+		List<Reader> result =
+				session.getNamedQuery("Reader.all")
 				.list();
 		return result;
 	}
 
 	@Override
-	public boolean save(Person obj) {
+	public boolean save(Reader obj) {
 		
 		try{
 			session.beginTransaction();
@@ -55,12 +55,12 @@ public class HibernatePersonManager
 	}
 
 	@Override
-	public boolean delete(Person obj) {
+	public boolean delete(Reader obj) {
 		
 		try
 		{
 			session.beginTransaction();
-			session.getNamedQuery("Person.delete")
+			session.getNamedQuery("Reader.delete")
 			.setInteger("id", obj.getId())
 			.executeUpdate();
 			
