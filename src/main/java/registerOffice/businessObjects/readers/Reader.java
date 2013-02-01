@@ -49,6 +49,7 @@ public class Reader {
 	private String firstname;
 	private String pesel;
 	private String address;
+	private String city;
 	
 	
 	/*@Transient
@@ -60,7 +61,7 @@ public class Reader {
 		this.address=address;
 	}*/
 	
-	public Reader(String firstname, String name, String pesel, String address)
+	public Reader(String firstname, String name, String pesel, String address, String city)
 	{
 		//context= Context.getInstance();
 		//context.raisenumberOfPeople();
@@ -68,17 +69,16 @@ public class Reader {
 		this.name=name;
 		this.address=address;
 		this.pesel=pesel;
+		this.city=city;
 		this.books=new ArrayList<Book>();
 	}
 	
-	/*public Reader(String name) {
-		
+	/*public Reader(String name) {	
 		this(name,"");
 	}
 	
 	public Reader()
 	{
-		
 		this("","");
 	}*/
 	
@@ -116,6 +116,8 @@ public class Reader {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	
 	
 	@Override
 	protected void finalize() throws Throwable {
@@ -129,6 +131,13 @@ public class Reader {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	

@@ -33,22 +33,26 @@ public class Main {
 		ManagerInterface<Reader> hib= 
 				new HibernatePersonManager(session);
 				
+		//tworzenie czytelnikow
+		Reader arek = new Reader("Arek","Wolski", "1234", "Klonowa 2","Sopot");
+		Reader basia = new Reader("Barbara","Sowka", "65789", "Kameliowa 2","Gdynia");
+		Reader andrzej = new Reader("Andrzej","Bezgacki", "874511", "MPS 16","Gdynia");
 		
-		Reader arek = new Reader("Arek","Wolski", "1234", "Klonowa 2");
-		Reader basia = new Reader("Barbara","Sowka", "65789", "Kameliowa 2");
-		Reader andrzej = new Reader("Andrzej","Bezgacki", "874511", "MPS 16");
-		
+		//dodawanie ksiązek - papierowych, audiobookow i magazynow
 		Book sniad = new Paperback("Sniadanie mistrzow","AAC555");
+		Book rok = new Paperback("Rok 1984","BBF487");
 		Book disc = new Audiobook("Discworld","PPD555",15);
 		Book play = new Magazine("Playboy","SdC741",2012);
 		
 		sniad.setOwner(arek);
 		disc.setOwner(basia);
 		play.setOwner(andrzej);
+		rok.setOwner(andrzej);
 		
 		arek.getBooks().add(sniad);
 		basia.getBooks().add(disc);
 		andrzej.getBooks().add(play);
+		andrzej.getBooks().add(rok);
 		
 		hib.save(arek);
 		hib.save(basia);
