@@ -4,10 +4,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import registerOffice.businessObjects.books.Audiobook;
-import registerOffice.businessObjects.books.Book;
-import registerOffice.businessObjects.books.Magazine;
-import registerOffice.businessObjects.books.Paperback;
+import registerOffice.businessObjects.books.*;
 import registerOffice.businessObjects.readers.*;
 import registerOffice.management.*;
 //biblioteki nieimplementowane
@@ -60,7 +57,7 @@ public class Main {
 		ulica.setOwner(marek);
 		disc.setOwner(basia);
 		mort.setOwner(basia);
-		dom.setOwner(basia);
+		dom.setOwner(ania);
 		lsnie.setOwner(basia);
 		nauka.setOwner(basia);
 		play.setOwner(andrzej);
@@ -71,7 +68,7 @@ public class Main {
 		marek.getBooks().add(sniad);
 		marek.getBooks().add(carr);
 		marek.getBooks().add(ulica);
-		marek.getBooks().add(most);
+		ania.getBooks().add(most);
 		basia.getBooks().add(disc);
 		basia.getBooks().add(mort);
 		basia.getBooks().add(lsnie);
