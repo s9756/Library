@@ -27,7 +27,7 @@ public class Main {
 				new HibernatePersonManager(session);
 
 		//tworzenie czytelnikow
-		Reader marek = new Reader("Marek","Wolski", "85121125447", "Klonowa 2","Sopot");
+		Reader marek = new Reader("Marek","Wolski", "84121125447", "Klonowa 2","Sopot");
 		Reader basia = new Reader("Barbara","Sowka", "82112249874", "Kameliowa 2","Gdynia");
 		Reader andrzej = new Reader("Andrzej","Bezgacki", "87051155412", "Stawna 16","Gdynia");
 		Reader ania = new Reader("Anna","Smolska", "91011126479", "Polna 1","Gdansk");
