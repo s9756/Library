@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 public class Paperback extends Book{
 
 	
-
 	private String title;
 	private String signature;
 	
@@ -19,10 +18,6 @@ public class Paperback extends Book{
 		this.signature=signature;
 	}
 	
-	/*public Paperback()
-	{
-		this("","");
-	}*/
 	
 	//wlasciwosci
 	public String getTitle() {
@@ -43,19 +38,10 @@ public class Paperback extends Book{
 	
 	//metody
 	
-
 	@Override
 	public String getBookDetails() {
 		// TODO Auto-generated method stub
 		return title+" "+signature;
 	}
 
-	/*@Override
-	public Book Clone() {
-		
-		Paperback returnValue =new Paperback();
-		returnValue.setSignature(this.signature);
-		
-		return returnValue;
-	}*/
 }

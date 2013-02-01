@@ -16,6 +16,7 @@ public class Audiobook extends Book{
 	private String title;
 	private String signature;
 
+	//wlasciwosci
 	public String getTitle() {
 		return title;
 	}
@@ -48,10 +49,5 @@ public class Audiobook extends Book{
 			this.length=length;
 		}
 	
-	/*@Override
-	public Book Clone() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 }
 

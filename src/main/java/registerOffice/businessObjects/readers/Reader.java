@@ -2,7 +2,6 @@ package registerOffice.businessObjects.readers;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,16 +9,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
-
-//import registerOffice.Context;
 import registerOffice.businessObjects.books.*;
+//biblioteki nieimportowane
+//import javax.persistence.Transient;
+//import registerOffice.Context;
 
 
-@Entity
+
+@Entity //tworzenie tabeli z czytelnikami
 @Table(name = "Readers")
 @NamedQueries({
 	@NamedQuery(
@@ -41,7 +40,7 @@ public class Reader {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name="Name")
+	@Column(name="Name") //okreslenie kolumny glownej
 	private String name;
 	
 	@OneToMany(mappedBy="owner", cascade = CascadeType.PERSIST)
@@ -51,16 +50,7 @@ public class Reader {
 	private String address;
 	private String city;
 	
-	
-	/*@Transient
-	Context context;*/
-	
-	/*public Reader(String name, String pesel, String address) //wrzucał do SQL
-	{
-		this(name,pesel);
-		this.address=address;
-	}*/
-	
+	//konstruktor
 	public Reader(String firstname, String name, String pesel, String address, String city)
 	{
 		//context= Context.getInstance();
@@ -73,15 +63,8 @@ public class Reader {
 		this.books=new ArrayList<Book>();
 	}
 	
-	/*public Reader(String name) {	
-		this(name,"");
-	}
-	
-	public Reader()
-	{
-		this("","");
-	}*/
-	
+
+	//wlasciwosci
 	public String getFirstname() {
 		return firstname;
 	}
@@ -117,14 +100,6 @@ public class Reader {
 		this.id = id;
 	}
 
-	
-	
-	@Override
-	protected void finalize() throws Throwable {
-		//context.reducePeople();
-		super.finalize();
-	}
-
 	public String getAddress() {
 		return address;
 	}
@@ -140,5 +115,28 @@ public class Reader {
 		this.city = city;
 	}
 
+	/*@Transient
+	Context context;*/
+	
+	/*public Reader(String name, String pesel, String address) //wrzucał do SQL
+	{
+		this(name,pesel);
+		this.address=address;
+	}*/
+	
+	/*public Reader(String name) {	
+		this(name,"");
+	}
+	
+	public Reader()
+	{
+		this("","");
+	}*/
+	
+	/*@Override
+	protected void finalize() throws Throwable {
+		context.reducePeople();
+		super.finalize();
+	}*/
 	
 }
