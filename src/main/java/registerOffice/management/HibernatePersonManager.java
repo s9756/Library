@@ -26,6 +26,7 @@ public class HibernatePersonManager
 			return null;
 		
 		Reader returnValue = new Reader(
+				result.get(0).getFirstname(), 
 				result.get(0).getName(), 
 				result.get(0).getPesel(),
 				result.get(0).getAddress());

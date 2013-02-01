@@ -27,6 +27,7 @@
     <mapping class="registerOffice.businessObjects.readers.Reader" />
     <mapping class="registerOffice.businessObjects.books.Audiobook"/>
     <mapping class="registerOffice.businessObjects.books.Paperback"/>
+    <mapping class="registerOffice.businessObjects.books.Magazine"/>
    
     </session-factory>
 </hibernate-configuration>

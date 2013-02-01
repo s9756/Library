@@ -71,12 +71,13 @@ public class HibernatePersonManagerTests {
 
 	@Test
 	public void testSave() {
-		Reader p = new Reader("Tomasz","2314","Morska");
+		Reader p = new Reader("Tomasz","Puszczyk","2314","Morska");
 		mgr.save(p);
 		Reader result = mgr.get(7);
 		assertNotNull("nie zapisano do bazy",result);
 		assertEquals("zle ustawienie adresu",result.getAddress(),"Morska");
 		assertEquals("zle ustawienie imion",result.getName(), "Tomasz");
+		assertEquals("zle ustawienie nazwisk",result.getFirstname(), "Puszczyk");
 		assertEquals("zle ustawienie peselu",result.getPesel(), "2314");
 		
 	}

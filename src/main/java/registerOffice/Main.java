@@ -11,6 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 import registerOffice.businessObjects.books.Audiobook;
 import registerOffice.businessObjects.books.Book;
+import registerOffice.businessObjects.books.Magazine;
 import registerOffice.businessObjects.books.Paperback;
 import registerOffice.businessObjects.readers.*;
 import registerOffice.management.*;
@@ -33,17 +34,25 @@ public class Main {
 				new HibernatePersonManager(session);
 				
 		
-		Reader arek = new Reader("Arek", "1234", "Klonow 2");
-		Reader basia = new Reader("Barbara", "65789", "Kameliowa 2");
+		Reader arek = new Reader("Arek","Wolski", "1234", "Klonowa 2");
+		Reader basia = new Reader("Barbara","Sowka", "65789", "Kameliowa 2");
+		Reader andrzej = new Reader("Andrzej","Bezgacki", "874511", "MPS 16");
+		
 		Book sniad = new Paperback("Sniadanie mistrzow","AAC555");
 		Book disc = new Audiobook("Discworld","PPD555",15);
+		Book play = new Magazine("Playboy","SdC741",2012);
+		
 		sniad.setOwner(arek);
 		disc.setOwner(basia);
+		play.setOwner(andrzej);
+		
 		arek.getBooks().add(sniad);
 		basia.getBooks().add(disc);
+		andrzej.getBooks().add(play);
 		
 		hib.save(arek);
 		hib.save(basia);
+		hib.save(andrzej);
 		
 		List<Reader>results = hib.getAll();
 		

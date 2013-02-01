@@ -46,9 +46,10 @@ public class Reader {
 	
 	@OneToMany(mappedBy="owner", cascade = CascadeType.PERSIST)
 	private List<Book> books;
-	
+	private String firstname;
 	private String pesel;
 	private String address;
+	
 	
 	/*@Transient
 	Context context;*/
@@ -58,10 +59,12 @@ public class Reader {
 		this(name,pesel);
 		this.address=address;
 	}*/
-	public Reader(String name, String pesel, String address)
+	
+	public Reader(String firstname, String name, String pesel, String address)
 	{
 		//context= Context.getInstance();
 		//context.raisenumberOfPeople();
+		this.firstname=firstname;
 		this.name=name;
 		this.address=address;
 		this.pesel=pesel;
@@ -78,6 +81,13 @@ public class Reader {
 		
 		this("","");
 	}*/
+	
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname= firstname;
+	}
 	
 	public String getName() {
 		return name;
