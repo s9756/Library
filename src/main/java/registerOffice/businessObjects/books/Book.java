@@ -4,10 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
-
-//import registerOffice.Context;
 import registerOffice.businessObjects.readers.Reader;
+//import javax.persistence.Transient;
+//import registerOffice.Context;
 
 @Entity
 public abstract class Book implements BookInterface{
@@ -18,14 +17,8 @@ public abstract class Book implements BookInterface{
 	
 	
 	@ManyToOne
-	protected Reader owner;
+	protected Reader owner; //alias wewnatrz klasy
 	
-	//@Transient
-	//Context context;
-	public Book(){
-	//	context =Context.getInstance();
-	//	context.raiseNumberOfBooks();
-	}
 	
 	public void printData()
 	{
@@ -35,7 +28,6 @@ public abstract class Book implements BookInterface{
 	
 	public abstract String getBookDetails();
 	
-	//public abstract Book Clone();
 	
 	public void setOwner(Reader owner)
 	{
@@ -50,10 +42,17 @@ public abstract class Book implements BookInterface{
 		this.id = id;
 	}
 
-	@Override
+	/*@Override
 	protected void finalize() throws Throwable {
-	//	context.reduceBooks();
+		context.reduceBooks();
 		super.finalize();
-	}
+	}*/
+
+	/*@Transient
+	Context context;
+	public Book(){
+		context =Context.getInstance(); //licznik produktow w pamieci
+		context.raiseNumberOfBooks();
+	}*/
 	
 }

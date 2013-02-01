@@ -16,6 +16,7 @@ public class Magazine extends Book{
 	private String signature;
 	private int year;
 	
+	//wlasciwosci
 	public String getTitle() {
 		return title;
 	}
@@ -48,10 +49,5 @@ public class Magazine extends Book{
 			this.year=year;
 		}
 	
-	/*@Override
-	public Book Clone() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
 }
 
