@@ -1,0 +1,7 @@
+Opis aplikacji "Biblioteka"
+
+Aplikacja przeznaczona jest do obsługi niewielkich rozmiarów biblioteki zawierającej kilkanaście pozycji (tradycyjnych książek papierowych, audiobooków i czasopism), do której uczęszcza kilku czytelników.
+
+System pozwala stworzyć bazę danych mysql, w której czytelnicy są skatalogowani wg danych teleadresowych, a zasoby biblioteczne wg tytułu, numeru karty, długości trwania (tylko audiobooki) i rocznika (czasopisma). Każdej pozycji można przypisać identyfikator osoby wypożyczającej.
+
+W zależności od potrzeb wpisy można dodawać, modyfikować lub usuwać.
